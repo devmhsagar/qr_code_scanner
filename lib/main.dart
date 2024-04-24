@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qr_code_scanner/scan_qr_code.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,30 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'QR Code Scanner and Generator',
-      home:  HomePage(),
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.transparent, elevation: 0),
+      ),
+      title: 'QR Code Scanner',
+      debugShowCheckedModeBanner: false,
+      home: ScanQrCode(),
     );
   }
 }
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('QR Code Scanner and Generator'), backgroundColor: Colors.blue,
-      ),
-      body: const Center(
-        child: Text('QR Code Scanner and Generator'),
-      ),
-    );
-  }
-}
-

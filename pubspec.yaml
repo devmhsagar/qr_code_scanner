@@ -1,5 +1,5 @@
-name: qr_code_scanner_generator
-description: "qr_code_scanner_generator"
+name: qr_code_scanner
+description: "qr_code_scanner"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -35,8 +35,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  qr_flutter: ^4.1.0
-  flutter_barcode_scanner: ^2.0.0
+  mobile_scanner: ^4.0.1
 
 
 dev_dependencies:
