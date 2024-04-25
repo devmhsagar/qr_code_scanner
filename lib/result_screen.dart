@@ -53,12 +53,15 @@ class ResultScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            Text(
-              code,
-              style: const TextStyle(
-                fontSize: 16,
-                color: Colors.black87,
-                letterSpacing: 1,
+            Center(
+              child: Text(
+                code,
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: Colors.black87,
+                  letterSpacing: 1,
+                ),
+                textAlign: TextAlign.center, // Aligning the text center
               ),
             ),
             const SizedBox(height: 10),

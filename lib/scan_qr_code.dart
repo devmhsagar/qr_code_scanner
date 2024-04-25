@@ -15,6 +15,8 @@ class ScanQrCode extends StatefulWidget {
 class _ScanQrCodeState extends State<ScanQrCode> {
   MobileScannerController cameraController = MobileScannerController();
   bool isScannedCompleted = false;
+  bool isFlashOn = false;
+  bool isFrontCamera = false;
 
   void closeScanner() {
     setState(() {
@@ -26,7 +28,23 @@ class _ScanQrCodeState extends State<ScanQrCode> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgColor,
+      drawer: const Drawer(),
       appBar: AppBar(
+        actions: [
+          IconButton(onPressed: (){
+            setState(() {
+              isFlashOn = !isFlashOn;
+            });
+            cameraController.toggleTorch();
+          }, icon: Icon(Icons.flash_on, color: isFlashOn ? Colors.blue : Colors.grey),),
+          IconButton(onPressed: (){
+            setState(() {
+              isFrontCamera = !isFrontCamera;
+            });
+            cameraController.switchCamera();
+          }, icon:  Icon(Icons.camera_front, color: isFrontCamera ? Colors.blue : Colors.grey),)
+        ],
+        iconTheme:  const IconThemeData(color: Colors.black87),
         centerTitle: true,
         title: const Text(
           'QR Scanner',
